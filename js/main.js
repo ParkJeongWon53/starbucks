@@ -1,21 +1,3 @@
-//seach 로고를 클릭가능하게!
-const seachEl = document.querySelector('.search');
-const seachInputEl = seachEl.querySelector('input');
-
-seachEl.addEventListener('click', function () {
-  //logic
-  seachInputEl.focus();
-});
-
-//통합검색어 추가
-seachInputEl.addEventListener('focus', function () {//헨들러
-  seachEl.classList.add('focused');
-  seachInputEl.setAttribute('placeholder', '통합검색');
-});
-seachInputEl.addEventListener('blur', function () {//헨들러
-  seachEl.classList.remove('focused');
-  seachInputEl.setAttribute('placeholder', '');
-});
 
 //화면 스크롤 배지
 const badgeEl = document.querySelector('header .badges');
@@ -134,6 +116,7 @@ promotionToggleBtn.addEventListener('click', function () {
   }
 });
 
+
 // 범위 랜덤 함수(소수점 2자리까지)
 function random(min, max) {
   // `.toFixed()`를 통해 반환된 문자 데이터를,
@@ -169,13 +152,3 @@ spyEls.forEach(function (spyEls) {
     .setClassToggle(spyEls, 'show')
     .addTo(new ScrollMagic.Controller());
 });
-
-//년도 자동갱신
-const thisYear = document.querySelector('.this-year');
-thisYear.textContent = new Date().getFullYear(); //2021
-
-
-
-
-
-

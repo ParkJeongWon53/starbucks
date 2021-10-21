@@ -5,7 +5,6 @@ body{
   font-weight: 400;
   line-height: 1.4;
   font-family: 'Nanum Gothic', sans-serif;
-  height: 3000px;
 }
 img{
   display: block;/* 이미지는 기본적으로 인라인 요소의 성질로 
@@ -19,8 +18,8 @@ a{
   margin: 0 auto;/* 중앙 정렬 */
   position: relative;
 }
-
-.btn{/* 우선순위 10점 */
+/*BUTTON*/
+.btn {
   width: 130px;
   padding: 10px;
   border: 2px solid #333;
@@ -34,42 +33,71 @@ a{
   display: block;
   transition: .4s;
 }
-.btn:hover{
+.btn:hover {
   background-color: #333;
-  color: #fff;
+  color: #FFF;
 }
-.btn.btn--reverse {/* 우선순위 20점 */
+.btn.btn--reverse {
   background-color: #333;
-  color: #fff;
+  color: #FFF;
 }
-.btn.btn--reverse:hover {/* 우선순위 30점 */
+.btn.btn--reverse:hover {
   background-color: transparent;
-  columns: #333;
-}
-.btn.btn--brown{
-  color: #592b18;
-  border-color: #592b18;;
-}
-.btn.btn--brown:hover{
-  color: #fff;
-  background-color: #592b18;;
-}
-.btn.btn--gold{
-  color: #d9aa8a;
-  border-color: #d9aa8a;;
-}
-.btn.btn--gold:hover{
-  color: #fff;
-  background-color: #fff;;
-}
-.btn.btn--white{
-  color: #fff;
-  border-color: #fff;;
-}
-.btn.btn--white{
   color: #333;
-  background-color: #fff;;
 }
+.btn.btn--brown {
+  color: #592B18;
+  border-color: #592B18;
+}
+.btn.btn--brown:hover {
+  color: #FFF;
+  background-color: #592B18;
+}
+.btn.btn--gold {
+  color: #D9AA8A;
+  border-color: #D9AA8A;
+}
+.btn.btn--gold:hover {
+  color: #FFF;
+  background-color: #D9AA8A;
+}
+.btn.btn--white {
+  color: #FFF;
+  border-color: #FFF;
+}
+.btn.btn--white:hover {
+  color: #333;
+  background-color: #FFF;
+}
+
+/* 스크롤 애니메이션 */
+.back-to-position {
+  opacity: 0;
+  transition: 1s;
+}
+.back-to-position.to-right {
+  transform: translateX(-150px);
+}
+.back-to-position.to-left {
+  transform: translateX(150px);
+}
+.show .back-to-position{
+  opacity: 1;
+  transform: translateX(0);
+}
+.show .back-to-position.delay-0 {
+  transition-delay: 0s;
+}
+.show .back-to-position.delay-1 {
+  transition-delay: .3s;
+}
+.show .back-to-position.delay-2 {
+  transition-delay: .6s;
+}
+.show .back-to-position.delay-3 {
+  transition-delay: .9s;
+}
+
 
 
 
@@ -263,244 +291,81 @@ header .badges .badge{
 }
 
 
-/* VISUAL */
-.visual {
-  margin-top: 120px;
-  background-image: url("../images/visual_bg.jpg");
-  background-position: center;
-
+/* FOOTER */
+footer {
+  background-color: #272727;
+  border-top: 1px solid #333;
 }
-.visual .inner{
-  height: 645px;
-  
+footer .inner{
+  padding: 40px 0 60px 0;
 }
-.visual .title{
-  position: absolute;
-  top: 88px;
-  left: -10px;
-}
-.visual .title .btn{
-  position: absolute;
-  top: 259px;
-  left: 173px;
-}
-.visual .cup1.imges{/* 일치선댁자 */
-  position: absolute;
-  bottom: 0;
-  right: -47px;
-  
-}
-.visual .cup1.text{
-  position: absolute;
-  to: 38px;
-  right: 171px;
-}
-.visual .cup2.imges{
-  position: absolute;
-  bottom: 0;
-  right: 162px;
-}
-.visual .cup2.text{
-  position: absolute;
-  top: 321px;
-  right: 416px;
-}
-.visual .spoon.imges{
-  position: absolute;
-  bottom: 0;
-  left: 275px;
-}
-.visual .fade-in{
-  opacity: 0;
-}
-
-
-/* NOTICE  */
-.notice{
-
-}
-.notice .notice-line{
-  position: relative;
-}
-.notice .notice-line .bg-left{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 100%;
-  background-color: #333;
-}
-.notice .notice-line .bg-right{
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 50%;
-  height: 100%;
-  background-color: #f6f5ef;
-}
-.notice .notice-line .inner{
-  height: 62px;
-  display: flex;
-}
-.notice .notice-line .inner__left{
-  width: 60%;
-  height: 100%;
-  background-color: #333;
-  display: flex;
-  align-items: center;
-}
-.notice .notice-line .inner__left h2{
-  color: #fff;
-  font-size: 17px;
-  font-weight: 700;
-  margin-right: 20px;
-}
-.notice .notice-line .inner__left .swiper-container{
-  height: 62px;
-  flex-grow: 1;
-}
-.notice .notice-line .inner__left .swiper-slide{
-  height: 62px;
-  display: flex;
-  align-items: center;
-}
-.notice .notice-line .inner__left .swiper-slide a{
-  color: #fff;
-}
-.notice .notice-line .inner__left .notice-line__more{
-  width: 62px;
-  height: 62px;
-  display: flex;
-  justify-content: center;/*수평*/
-  align-items: center;/*수직*/
-}
-.notice .notice-line .inner__left .notice-line__more .material-icons{
-  color: #fff;
-  font-size: 30px;
-}
-.notice .notice-line .inner__right{
-  width: 40%;
-  height: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-.notice .notice-line .inner__right h2{
-  font-size: 17px;
-  font-weight: 700;
-}
-.notice .notice-line .inner__right .toogle-promotion{
-  width: 62px;
-  height: 62px;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;/*수평*/
-  align-items: center;/*수직*/
-
-}
-.notice .notice-line .inner__right .toogle-promotion .material-icons{
-  font-size: 30px;
-}
-.notice .promotion{
-  height: 693px;
-  background-color: #f6f5ef;
-  position:relative;
-}
-.notice .promotion .swiper-conrainer{
-  width: calc(819px * 3 + 20px);/* 자동 넓이 계산 */
-  height: 553px;
-  position: absolute;
-  top: 40px;
-  left: 50%;
-  margin-left: calc((819px * 3 + 20px) / -2);
-  /* 요소의 가로 넓이의 절반(-1238.5px) */
-}
-.notice .promotion .swiper-slide{
-  opacity: .5;
-  transition: opacity 1s;
-  position: relative;
-}
-.notice .promotion .swiper-slide-active{
-  opacity: 1;
-}
-
-.notice .promotion .swiper-slide .btn {
-  /* 위에 미리 만들어둔 버튼 사용!!!*/
-  /*width: 130px;*/
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-}
-.notice .promotion .swiper-pagination{
-  bottom: 40px;
-  left: 0;
-  right: 0;
-}
-.notice .promotion .swiper-pagination .swiper-pagination-bullet {
-  background-color: transparent;
-  background-image: url("../images/promotion_slide_pager.png");
-  width: 12px;
-  height: 12px;
-  margin-right: 6px;
-  outline: none;
-}
-.notice .promotion .swiper-pagination .swiper-pagination-bullet:last-child {
-  margin-right: 0;
-}
-.notice .promotion .swiper-pagination .swiper-pagination-bullet-active {
-  background-image: url("../images/promotion_slide_pager_on.png");
-}
-.notice .promotion .swiper-prev, 
-.notice .promotion .swiper-next{
-  width: 42px;
-  height: 42px;
-  outline: none;
-  border: 2px solid #333;
-  border-radius: 50%;
-  position: absolute;
-  /* Swiper Container 높이의 절반만큼 끌어올림 */
-  /* 버튼 높이의 절반만큼 추가로 끌어올림 */
-  top: 300px;
-  z-index: 1;
-  cursor: pointer;
-  outline: none;
+footer .menu{
   display: flex;
   justify-content: center;
-  align-items: center;
-  transition: .4s;
 }
-.notice .promotion .swiper-prev{
-  left: 50%;
-  margin-left: -480px;
+footer .menu li{
+  position: relative;
 }
-.notice .promotion .swiper-next{
-  right: 50%;
-  margin-right: -480px;
+footer .menu li::before{
+  content: "";
+  width: 3px;
+  height: 3px;
+  background-color: #555;
+  position: absolute; /* display: block;값으로 자동변환 */
+  top: 0;
+  bottom: 0;
+  right: -1px;
+  margin: auto;
 }
-.notice .promotion .swiper-prev:hover, 
-.notice .promotion .swiper-next:hover{
-  background-color: #333;
-  color: #fff;
+footer .menu li:last-child::before{
+  display: none;
 }
+footer .menu li a{
+  color: #ccc;
+  font-size: 12px;
+  font-weight: 700px;
+  padding: 15px;
+  display: block;
+}
+footer .menu li a.green{
+  color: #669900;
+}
+footer .btn-group{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+footer .btn-group .btn{
+  font-size: 12px;
+  margin-right: 10px;
+}
+footer .btn-group .btn:last-child{
+  margin-right: 0;
+}
+footer .info {
+  margin-top: 30px;
+  text-align: center;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
+footer .info span {
+  margin-right: 20px;
+  color: #999;
+  font-size: 12px;
+}
+footer .info span:last-child {
+  margin-right: 0;
+}
+footer .copyright {
+  color: #999;
+  font-size: 12px;
+  text-align: center;
+  margin-top: 12px;
+}
+footer .logo{
+  margin: 30px auto 0;
+  /* 위와같은 값은 가로 넓이값이 필요하지만 footer .logo는 이미지요소이다.
+  즉 img 요소가 display: block; , margin: 0 auto;인 경우, width 속성없이도
+  가운데 정렬이 가능하다.
+  초기설정으로 img요소에 isplay: block;을 지정하였다!!!!! */  
+}
 
